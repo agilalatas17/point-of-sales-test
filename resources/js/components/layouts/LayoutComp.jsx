@@ -8,9 +8,7 @@ export default function LayoutComp({ children }) {
             <Layout>
                 <HeaderComp />
                 <Content className="mt-14">
-                    <main className="min-h-[87.7vh] bg-blue-300 px-14">
-                        {children}
-                    </main>
+                    <main className="px-32 py-10">{children}</main>
                 </Content>
             </Layout>
         </>

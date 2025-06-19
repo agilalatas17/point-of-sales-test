@@ -46,7 +46,7 @@ export default function HeaderComp() {
                     wrap={false}
                     justify="start"
                     align="center"
-                    className="bg-sky-400 px-14 h-14"
+                    className="bg-sky-400 px-32 h-14"
                 >
                     <Col span={24}>
                         <Space className="h-14" size="large">
@@ -64,7 +64,7 @@ export default function HeaderComp() {
                     wrap={false}
                     justify="start"
                     align="middle"
-                    className="px-14 bg-white"
+                    className="px-32 bg-white"
                 >
                     <Col span={24}>
                         <Menu

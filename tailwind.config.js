@@ -6,6 +6,8 @@ export default {
         "./resources/**/*.jsx",
         "./resources/**/*.vue",
     ],
+    corePlugins: { preflight: false },
+    important: true,
     theme: {
         extend: {},
     },

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Layout, Menu, Row, Col } from "antd";
+import { Layout, Menu, Row, Col, Space } from "antd";
+import { Link } from "@inertiajs/react";
 
 export default function HeaderComp() {
     const pathname = window.location.pathname;
@@ -10,14 +11,24 @@ export default function HeaderComp() {
         setCurrent(values.key);
     };
 
+    // const MENU_ITEMS = [
+    //     {
+    //         key: "/food",
+    //         label: "Food",
+    //     },
+    //     {
+    //         key: "/transaksi",
+    //         label: "transaksi",
+    //     },
+    // ];
     const MENU_ITEMS = [
         {
             key: "/food",
-            label: "Food",
+            label: <Link href="/food">Food</Link>,
         },
         {
             key: "/transaksi",
-            label: "Transaksi",
+            label: <Link href="/transaksi">Transaksi</Link>,
         },
     ];
     return (
@@ -34,11 +45,19 @@ export default function HeaderComp() {
                 <Row
                     wrap={false}
                     justify="start"
-                    align="middle"
+                    align="center"
                     className="bg-sky-400 px-14 h-14"
                 >
                     <Col span={24}>
-                        <h1 className="text-red-400 text-2xl">Alan Resto</h1>
+                        <Space className="h-14" size="large">
+                            <img
+                                src="/assets/icons/foodIcon.png"
+                                className="block"
+                                width={40}
+                                height={40}
+                            />
+                            <h1 className="text-white text-2xl">Alan Resto</h1>
+                        </Space>
                     </Col>
                 </Row>
                 <Row

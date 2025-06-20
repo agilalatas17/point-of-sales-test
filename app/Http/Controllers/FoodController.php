@@ -23,4 +23,21 @@ class FoodController extends Controller
     public function create() {
         return inertia('Food/Create');
     }
+
+    public function store(Request $request) {
+        $gambar = $request->file('gambar');
+        $nama_gambar = time() . '_' . $gambar->getClientOriginalName();
+        $path_location = public_path('upload/images');
+        $gambar->move($path_location, $nama_gambar);
+
+        $dataStore = [
+            'nama' => $request->nama,
+            'gambar' => $nama_gambar,
+            'harga' => $request->harga,
+        ];
+
+        Product::create($dataStore);
+
+        return redirect()->route('food.index')->with('success', 'Menu berhasil ditambahkan');;
+    }
 }

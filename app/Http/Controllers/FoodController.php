@@ -15,8 +15,12 @@ class FoodController extends Controller
             return $food;
         });
 
-        return inertia('food', [
+        return inertia('Food/Index', [
             'foods' => $foods
         ]);
+    }
+
+    public function create() {
+        return inertia('Food/Create');
     }
 }

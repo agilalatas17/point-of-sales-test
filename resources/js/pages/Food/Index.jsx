@@ -1,6 +1,7 @@
 import { usePage } from "@inertiajs/react";
-import { Card, Table, Image, Button, Tooltip, Row } from "antd";
+import { Card, Table, Image, Button, Tooltip, Space, Row } from "antd";
 import { DeleteOutlined, PlusOutlined } from "@ant-design/icons";
+import { Link } from "@inertiajs/react";
 
 export default function FoodPage() {
     const { foods } = usePage().props;
@@ -54,13 +55,23 @@ export default function FoodPage() {
         <>
             <Card>
                 <Row className="mb-8">
-                    <Button
+                    <Link
+                        href="/food/create"
+                        className="bg-sky-400 text-white px-8 py-2 rounded hover:bg-sky-400/85 transition-colors duration-300 ease-in-out"
+                    >
+                        <Space>
+                            <PlusOutlined />
+                            Tambah Menu
+                        </Space>
+                    </Link>
+
+                    {/* <Button
                         className="bg-sky-400 text-white hover:bg-sky-400/85 focus:outline-none transition duration-300"
                         icon={<PlusOutlined />}
                         size="large"
                     >
                         Tambah Menu
-                    </Button>
+                    </Button> */}
                 </Row>
                 <Row>
                     <Table
